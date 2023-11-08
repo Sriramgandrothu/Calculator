@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+        #main{width: 350px; height: 280px; background-color: black;}
+        input{width: 20%; height: 40px; font-size: 20px; margin: 6px;}
+        #rry{width:93.5%; height: 50px; background-color: silver ;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form name="sri">
+            <input type="text" name="ram" placeholder="0" id="rry"> <br>
+            <input type="button" value="1" onclick="sri.ram.value+=1">
+            <input type="button" value="2" onclick="sri.ram.value+=2">
+            <input type="button" value="3" onclick="sri.ram.value+=3">
+            <input type="button" value="+" onclick="add()">
+            <br>
+            <input type="button" value="4" onclick="sri.ram.value+=4">
+            <input type="button" value="5" onclick="sri.ram.value+=5">
+            <input type="button" value="6" onclick="sri.ram.value+=6">
+            <input type="button" value="-" onclick="sub()">
+            <br>
+            <input type="button" value="7" onclick="sri.ram.value+=7">
+            <input type="button" value="8" onclick="sri.ram.value+=8">
+            <input type="button" value="9" onclick="sri.ram.value+=9">
+            <input type="button" value="/" onclick="div()">
+            <br>
+            <input type="button" value="c" onclick="sri.ram.value=''">
+            <input type="button" value="0" onclick="sri.ram.value+=0">
+            <input type="button" value="=" onclick="sri.ram.value=eval(sri.ram.value)">
+            <input type="button" value="x" onclick="mul()">
+            <br>
+        </form>
+    </div>
+    <script>
+
+        function add() {
+            var act=0, b=0;
+        act= sri.ram.value;
+        b=act.charAt(act.length-1);
+        if(b=='+' || b=='-' ||b=='/' ||b=='*'){
+            sri.ram.value=act.substring(0,act.length-1);
+            sri.ram.value+='+';
+        }else{
+            sri.ram.value+='+';
+        }
+        }
+
+        function sub() {
+            var act=0, b=0;
+        act= sri.ram.value;
+        b=act.charAt(act.length-1);
+        if(b=='+' || b=='-' ||b=='/' ||b=='*'){
+            sri.ram.value=act.substring(0,act.length-1);
+            sri.ram.value+='-';
+        }else{
+            sri.ram.value+='-';
+        }
+        } 
+    
+        function div() {
+            var act=0, b=0;
+        act= sri.ram.value;
+        b=act.charAt(act.length-1);
+        if(b=='+' || b=='-' ||b=='/' ||b=='*'){
+            sri.ram.value=act.substring(0,act.length-1);
+            sri.ram.value+='/';
+        }else{
+            sri.ram.value+='/';
+        }
+        }
+    
+        function mul() {
+            var act=0, b=0;
+        act= sri.ram.value;
+        b=act.charAt(act.length-1);
+        if(b=='+' || b=='-' ||b=='/' ||b=='*'){
+            sri.ram.value=act.substring(0,act.length-1);
+            sri.ram.value+='*';
+        }else{
+            sri.ram.value+='*';
+        }
+        }
+    </script>
+</body>
+</html>
